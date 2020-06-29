@@ -1,0 +1,6 @@
+.btn--blue {
+  background: #3f3284;
+}
+
+.btn--blue:hover {
+  background: #6f60dd;
