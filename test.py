@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -18,6 +19,7 @@ from adafruit_ads1x15.analog_in import AnalogIn
 
 def main():
     print("Initialisation ...")
+    duration = int(sys.argv[1])
     lo1 = digitalio.DigitalInOut(board.D21)
     lo2 = digitalio.DigitalInOut(board.D20)
     i2c = busio.I2C(board.SCL, board.SDA)
@@ -28,7 +30,7 @@ def main():
      f.truncate(0)
      start_time = datetime.datetime.now()
      check = True
-     duration = 10
+     #duration = 10
      print("Starting Raw Data Acquisition")
      while check == True:
          if ((datetime.datetime.now() - start_time) < datetime.timedelta(seconds=duration)):
