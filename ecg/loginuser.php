@@ -1,34 +1,29 @@
 <?php
-
-echo '<html>';
-
-$host = "localhost"; /* Host name */
-$user = "id8999302_ecgcloud"; /* User */
-$password = "ecgcloud"; /* Password */
-$dbname = "id8999302_ecgcloud"; /* Database name */
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-	   
-	  $con = mysqli_connect($host, $user, $password,$dbname);
+include('connexion.php');
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-	  $myusername = mysqli_real_escape_string($con,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($con,md5($_POST['password'])); 
       
-      $sql = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($con,$sql);
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT id FROM login WHERE User = '$myusername' and Pass = '$mypassword'";
+      $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
+      
       $count = mysqli_num_rows($result);
       
-      // If result matched $username and $password, table row must be 1 row
+      // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-		session_start();
-        $_SESSION['username'] = $myusername;
-		//echo '<script>alert("Session=$username");</script>';
-		header("location: menu.html");
-	  }
-	  else
-		echo '<script>alert("Invalid Credentials");</script>';
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: menu.html");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
    }
 ?>
 
@@ -44,10 +39,9 @@ $dbname = "id8999302_ecgcloud"; /* Database name */
 <body background="a.jpg">
 <div class="login-page">
   <div class="form">
-    </form>
-    <form class="login-form">
-      <label style="font-size:14px">Username</label> <input type="text" name="username" id="Admin" placeholder="Enter Username">
-	  <label style="font-size:14px">Password</label> <input type="password" name="password" id="user_password" placeholder="Enter Password">
+    <form class="login-form" method="POST">
+      <label style="font-size:14px">Username</label> <input type="text" name="username" id="username" placeholder="Enter Username">
+	  <label style="font-size:14px">Password</label> <input type="password" name="password" id="password" placeholder="Enter Password">
       <input type="submit">
     </form>
   </div>

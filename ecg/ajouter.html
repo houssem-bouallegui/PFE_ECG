@@ -30,18 +30,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Register</h2>
-                    <form method="POST">
+                    <form method="POST" action="ajouter.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Prenom</label>
-                                    <input class="input--style-4" type="text" name="first_name" required>
+                                    <input class="input--style-4" type="text" name="first_name" maxlength="60" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nom</label>
-                                    <input class="input--style-4" type="text" name="last_name" required>
+                                    <input class="input--style-4" type="text" name="last_name" maxlength="60" required>
                                 </div>
                             </div>
                         </div>
@@ -75,20 +75,20 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" required>
+                                    <input class="input--style-4" type="email" name="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Numero téléphone</label>
-                                    <input class="input--style-4" type="text" name="phone" required>
+                                    <input class="input--style-4" type="tel" name="phone" pattern="[0-9]{8}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                <label class="label">Address</label>
-                                    <input class="input--style-4" type="text" name="address" required>
+                                    <input class="input--style-4" type="text" name="address" maxlength="100" required>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>

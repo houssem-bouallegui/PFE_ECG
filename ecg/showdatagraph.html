@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+var a =[];
+function getData(){       //this will read file and send information to other function
+       var xmlhttp;
+
+       if (window.XMLHttpRequest) {
+           xmlhttp = new XMLHttpRequest();               
+       }           
+       else {               
+           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+       }
+
+       xmlhttp.onreadystatechange = function () {               
+           if (xmlhttp.readyState == 4) {                   
+             var lines = xmlhttp.responseText;    //*here we get all lines from text file*
+
+             intoArray(lines);     //here we call function with parameter "lines*"                   
+           }               
+       }
+
+       xmlhttp.open("GET", "./ECG_Raw_data.txt", true);
+       xmlhttp.send();    
+}
+
+function intoArray (lines) {
+   // splitting all text data into array "\n" is splitting data from each new line
+   //and saving each new line as each element*
+   a = lines.split('\n'); 
+	console.log(a.length);
+}
+getData();
+window.onload = function () {
+
+console.log(a.length);
+
+var limit = a.length;
+var y;    
+var data = [];
+var dataSeries = { type: "line" };
+var dataPoints = [];
+for (var i = 0; i < limit; i += 1) {
+	console.log(i);
+	y = a[i]-5000;
+	console.log(y);
+	dataPoints.push({
+		x: i,
+		y: y
+	});
+}
+dataSeries.dataPoints = dataPoints;
+data.push(dataSeries);
+
+//Better to construct options first and then pass it as a parameter
+var options = {
+	zoomEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Try Zooming - Panning"
+	},
+	axisY: {
+		includeZero: false,
+		lineThickness: 1,
+		maximum: 30000,
+		interval: 3000
+	},
+	data: data  // random data
+};
+
+var chart = new CanvasJS.Chart("chartContainer", options);
+var startTime = new Date();
+chart.render();
+var endTime = new Date();
+document.getElementById("timeToRender").innerHTML = "Time to Render: " + (endTime - startTime) + "ms";
+
+}
+</script>
+<style>
+	#timeToRender {
+		position:absolute; 
+		top: 10px; 
+		font-size: 20px; 
+		font-weight: bold; 
+		background-color: #d85757;
+		padding: 0px 4px;
+		color: #ffffff;
+	}
+</style>
+</head>
+<body>
+<div id="chartContainer" style="height: 100%; width: 100%;"></div>
+<span id="timeToRender"></span>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>
