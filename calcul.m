@@ -1,8 +1,9 @@
 # not a function file:
 1;
 
-A = load ("-ascii", "ECG_Raw_data.dat")
+A = load ("-ascii", "ECG_Raw_data.dat");
 M=mean(A)
+
 #l = rows(A)
 #j=0
 

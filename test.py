@@ -22,6 +22,12 @@ def main():
     duration = int(sys.argv[1])
     lo1 = digitalio.DigitalInOut(board.D21)
     lo2 = digitalio.DigitalInOut(board.D20)
+    led = digitalio.DigitalInOut(board.D16)
+    
+    led.direction = digitalio.Direction.OUTPUT
+    print(led.value)
+    led.value = True
+    print(led.value)
     i2c = busio.I2C(board.SCL, board.SDA)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P0)
@@ -44,6 +50,7 @@ def main():
          else:
             check = False
      print("Finished Raw Data Acquisition")
+     led.value = False
      f.close()
 
 if __name__== "__main__":
