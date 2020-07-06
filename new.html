@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hotel Le Paradis</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+<div style="height:50%;display:flex;" class="box">
+<form method="POST" action="reserver.php" name="ins" onsubmit="return verification();">
+<fieldset style="background-color:transparent;">
+	<h1>Hotel Le Paradis</h1>
+	<h2 style="position:relative;left:25%;width:800px;background-color:#f1f1f1;border-radius:5px;padding:8px;">Bienvenue dans notre site Web, veuillez remplir ce formulaire pour reserver :</h2>
+	<fieldset class="field1">
+	<div style="background-color: #f1f1f1;">
+	<div class="boxw"><p>Nom et Prenom :  </p><input type="number" min="10" max="90" step="1" value="10" name="pre" id="pre" size="20" ></div>
+	
+	<?php
+	if(isset($_POST['button1'])) { 
+			$num=$_POST["num"];
+			$pres=11000-($num*100);
+			echo $pres;
+	?>
+</fieldset>
+	<input type="submit" value="Valider la reservation" name="button1" id="vald" onclick="calcul()">
+</fieldset>
+</form>
+</div>
+</body>
+</html>

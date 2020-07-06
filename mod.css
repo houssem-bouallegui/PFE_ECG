@@ -1,0 +1,113 @@
+.header{
+background-color:powderblue;
+font-size:50px;
+height:70px;
+margin-bottom:20;
+
+}
+
+.btn{
+
+width:100;
+height:50;
+margin-right:50;
+
+}
+.main{
+text-align:center;
+
+}
+
+ol.even {
+  position: relative;
+  left: 5.45455rem;
+}
+
+ol.odd {
+  position: relative;
+  margin-bottom: -4.5%;
+}
+
+table, th, td {
+  border: 1px solid white;
+  color: white;
+}
+
+h2 {
+	color: white;
+}
+.hex {
+  position: relative;
+  margin: 1em auto;
+  width: 6rem;
+  height: 10.2rem;
+  background: #3f3284;
+  transform: rotate(-90deg);
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 4.61538rem;
+  transition: all 150ms ease-in-out;
+  z-index: 2;
+  float: left;
+  
+}
+
+.hex:before, .hex:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: '';
+  z-index: -1;
+}
+
+.hex:before {
+  transform: rotate(60deg);
+}
+
+.hex:after {
+  transform: rotate(-60deg);
+}
+
+.hex:hover {
+  background: #6f60dd;
+  cursor: pointer;
+}
+
+
+.hex .hex-content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+
+   transform: translate(-50%, -50%) rotate(90deg);
+
+   color: white;
+ }
+ 
+ .box {
+	 position: absolute;
+	 top: 30%;
+     left: 35%;
+	 border: 10px solid transparent;
+ }
+ 
+ input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #6f60dd;
+  border: 0;
+  margin: 4px 2px;
+  border-radius: 30%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus {
+  background: #3f3284;
+}

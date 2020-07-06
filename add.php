@@ -48,7 +48,7 @@
 <div class="box">
 <ol class="odd center">
   <li class="hex">
-    <div class="hex-content"><center>Enregistrer <br>Temps :<input type="number" min="10" max="30" step="1" value="10" class="time" name="time" /><input type="submit" name="button1" value="Button1"  ></center></div>
+    <div class="hex-content"><center>Enregistrer <br>Temps :<input type="number" min="10" max="30" step="1" value="10" class="time" name="time" /><center><i class="material-icons" style="font-size:36px">cloud_upload</i></center><input type="submit" name="button1" value="Button1"  ></center></div>
   </li>
 </ol> 
 </div>

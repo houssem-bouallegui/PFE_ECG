@@ -37,7 +37,7 @@
 	      }
 	$out = $ssh->exec('cd /var/www/html && ./traitment.sh');
 	$out2 = substr($out,4);
-	echo $out2;
+	echo  "<p style='color:white;'>" . $out2 . "</p>";
   
         } 
         if(isset($_POST['button4'])) { 
@@ -69,16 +69,13 @@
     <div class="hex-content"><center>Lancer le script d’acquisition<br>Temps :<input type="number" min="10" max="30" step="1" value="10" class="time" name="time" /><input type="submit" name="button1" value="Button1" id="test1" onclick="test1()" ></center></div>
   </li>
   <li class="hex">
-    <div class="hex-content">Afficher la courbe ECG <br><center><i class="material-icons" style="font-size:30px">vpn_key</i></center><input type="button" name="button2" value="Button2" class="btn" onClick="parent.location='showdatagraph.html'"  ></div>
+    <div class="hex-content">Afficher la courbe ECG <br><center><i class="material-icons" style="font-size:30px">assessment</i></center><input type="button" name="button2" value="Button2" class="btn" onClick="parent.location='showdatagraph.html'"  ></div>
   </li>
   <li class="hex">
-    <div class="hex-content">Lancer le traitement de DATASET <br><center><i class="material-icons" style="font-size:30px">vpn_key</i></center><input type="submit" name="button3" value="Button3"  ></div>
+    <div class="hex-content">Lancer le traitement de DATASET <br><center><i class="material-icons" style="font-size:30px">chevron_right</i></center><input type="submit" name="button3" value="Button3"  ></div>
   </li>
   <li class="hex">
-    <div class="hex-content">Afficher les DATASET <br><center><i class="material-icons" style="font-size:30px">vpn_key</i></center><input type="submit" name="button4" value="Button4"  ></div>
-  </li>
-  <li class="hex">
-    <div class="hex-content">Comparaison des DATASET <br><center><i class="material-icons" style="font-size:30px">vpn_key</i></center><input type="submit" name="button5" value="Button5"  ></div>
+    <div class="hex-content">Afficher les DATASET <br><center><i class="material-icons" style="font-size:30px">storage</i></center><input type="submit" name="button4" value="Button4"  ></div>
   </li>
 </ol> 
 </div>

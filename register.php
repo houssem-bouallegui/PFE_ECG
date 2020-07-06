@@ -14,13 +14,13 @@
 			$result = $db->query($sql);
 
 			if ($result->num_rows > 0) {
-			  echo "<p style='color:white;'>erreur</p><br>";
+			  echo "<p>erreur</p><br>";
 			  
 			} else {
 			  echo "Enregistrement <br>";
 			  $sql2 = "INSERT INTO person (Nom, Prenom, DateN, sexe, email, num, adr) VALUES ('$nom', '$prenom', '$birthday', '$gender', '$email', '$phone', '$address')";
 			  if($result2 = $db->query($sql2) === TRUE){
-				  echo "<p style='color:white;'>Enregistrer </p><br>";
+				  echo "<p>Enregistrer </p><br>";
 				  $sql = "SELECT ID FROM person WHERE Nom = '$nom' and Prenom ='$prenom' and DateN = '$birthday'";
 				  $result = $db->query($sql);
 				  while($row = $result->fetch_assoc()) {
