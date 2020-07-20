@@ -3,11 +3,12 @@ background-color:powderblue;
 font-size:50px;
 height:70px;
 margin-bottom:10;
-
+font-family: "Times New Roman";
 }
 
 .main{
 text-align:center;
+font-family: "Times New Roman";
 
 }
 .left{
@@ -18,6 +19,7 @@ border-right:2px solid;
 border-top:2px solid;
 height:100%;
 padding-top:20;
+font-family: "Times New Roman";
 
 }
 .right{
@@ -27,7 +29,7 @@ float:left;
 height:100%;
 border-right:2px solid;
 border-top:2px solid;
-
+font-family: "Times New Roman";
 
 }
 .btn {
@@ -45,6 +47,7 @@ border-top:2px solid;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  
 }
 .btn:hover, .btn:active, .btn:focus {
   background: #3f3284;
@@ -54,13 +57,14 @@ border-top:2px solid;
 content: "";
   display: table;
   clear: both;
-
+font-family: "Times New Roman";
 
 }
 
 ol.even {
   position: relative;
   left: 5.45455rem;
+  font-family: "Times New Roman";
 }
 
 ol.odd {
@@ -81,6 +85,7 @@ ol.odd {
   transition: all 150ms ease-in-out;
   z-index: 2;
   float: left;
+font-family: "Times New Roman";
   
 }
 
@@ -112,7 +117,7 @@ ol.odd {
    position: absolute;
    top: 50%;
    left: 50%;
-
+font-family: "Times New Roman";
    transform: translate(-50%, -50%) rotate(90deg);
 
    color: white;
@@ -120,9 +125,17 @@ ol.odd {
  
 .box {
 	 position: absolute;
-	 
-     left: 30%;
+   left: 30%;
 	 border: 10px solid transparent;
+   font-family: "Times New Roman";
+ }
+.bo2 {
+	 position: absolute;
+   left: 30%;
+   top: 30%;
+	 border: 10px solid;
+   background-color: white;
+   font-family: "Times New Roman";
  }
 input[type=submit] {
   font-family: "Roboto", sans-serif;
@@ -151,6 +164,6 @@ input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus {
   padding: 0;
   margin: 0;
   border: 1px solid #eee;
-	
+	font-family: "Times New Roman";
 	
 }

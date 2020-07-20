@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 import sys
 import numpy as np
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-#import serial
-#import platform
-#import requests
 import datetime
 import time
 import digitalio
@@ -15,15 +9,12 @@ import busio
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
-
-
 def main():
     print("Initialisation ...")
     duration = int(sys.argv[1])
     lo1 = digitalio.DigitalInOut(board.D21)
     lo2 = digitalio.DigitalInOut(board.D20)
     led = digitalio.DigitalInOut(board.D16)
-    
     led.direction = digitalio.Direction.OUTPUT
     print(led.value)
     led.value = True

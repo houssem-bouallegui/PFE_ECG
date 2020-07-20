@@ -1,15 +1,7 @@
 # not a function file:
 1;
-
+pkg load signal
 A = load ("-ascii", "ECG_Raw_data.dat");
+B=dct(A);
+C=mean(B);
 M=mean(A)
-
-#l = rows(A)
-#j=0
-
-#for j = 1:l:1
-#	B(j) = j+1
-#end
-
-#figure;
-#plot(B,A);

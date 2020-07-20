@@ -3,7 +3,7 @@ background-color:powderblue;
 font-size:50px;
 height:70px;
 margin-bottom:10;
-
+font-family: "Times New Roman";
 }
 
 .btn{
@@ -21,7 +21,7 @@ margin-bottom:10;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
-
+font-family: "Times New Roman";
 
 }
 
@@ -31,7 +31,7 @@ margin-bottom:10;
 }
 .main{
 text-align:center;
-
+font-family: "Times New Roman";
 }
 .left{
 width:29%;
@@ -41,7 +41,7 @@ border-right:2px solid;
 border-top:2px solid;
 height:100%;
 padding-top:20;
-
+font-family: "Times New Roman";
 }
 .right{
 
@@ -50,7 +50,7 @@ float:left;
 height:100%;
 border-right:2px solid;
 border-top:2px solid;
-
+font-family: "Times New Roman";
 
 }
 
@@ -117,7 +117,7 @@ ol.odd {
    position: absolute;
    top: 50%;
    left: 50%;
-
+font-family: "Times New Roman";
    transform: translate(-50%, -50%) rotate(90deg);
 
    color: white;
@@ -128,4 +128,5 @@ ol.odd {
 	 top: 30%;
      left: 45%;
 	 border: 10px solid transparent;
+   font-family: "Times New Roman";
  }

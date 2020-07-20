@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<link rel="stylesheet" type="text/css" href="testmanuel.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script>
 var a =[];
 function getData(){       //this will read file and send information to other function
@@ -90,9 +93,14 @@ document.getElementById("timeToRender").innerHTML = "Time to Render: " + (endTim
 </style>
 </head>
 <body>
+<body background="a.jpg">
+<br>
+<div class="header">
+ <center>ECG IDENTIFYING SYSTEM</center><i class="material-icons" style="font-size:30px;position:absolute;top:40px" onClick="parent.location='menu.html'">home</i>
+</div>
 <div id="chartContainer" style="height: 100%; width: 100%;"></div>
 <span id="timeToRender"></span>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+<A HREF="javascript:history.go(0)">Rafraichir</A>
 </body>
 </html>
